@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block maincontent %}
+
+<div class="container">
+
+  <p></p>
+
+  <div class="col-sm-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">User Info</div>
+      <div class="panel-body">
+        <h4>Username: {{ auth_id }}</h4>
+        <h4>Name: {{ first_name }} {{ last_name }}</h4>
+        <h4>Email: {{ email_address }}</h4>
+        <hr>
+        <a href="#">Edit</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Balance</div>
+      <div class="panel-body">
+        <h4>${{ balance }}</h4>
+        <hr>
+        <a href="/add_credits">Add to Balance</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

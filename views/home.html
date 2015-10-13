@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block maincontent %}
+
+<script>
+$(document).ready(function(){
+    getTipLogs("ul.list-group");
+});
+</script>
+
+<div class="container">
+
+  <p></p>
+
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Balance</div>
+        <div class="panel-body">
+          <h4>${{ balance }}</h4>
+          <hr>
+          <a href="/add_credits">Add to Balance</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Recent Tips</div>
+        <div class="panel-body">
+          <ul class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Notices</div>
+        <div class="panel-body">
+          <h4>List of Notices </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Tips you might like</div>
+        <div class="panel-body">
+          <h4>Tips you might like</h4>
+        </div>
+      </div>
+    </div>
+
+</div> 
+
+{% endblock %}

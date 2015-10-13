@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block maincontent %}
+
+<div class="container">
+
+  <form role="form" action="/add_credits" method="POST">
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        <h2>Add Credits</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        <label for="credits">Amount (Minumum of $10)</label>
+        <input class="form-control" type="number" name="credits"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        <button type="submit" class="btn btn-primary btn-block">Checkout</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block maincontent %}
+
+<div class="container">
+
+  <form role="form" action="/tip" method="POST">
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        <h2>Tip</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+	    <input class="form-control" type="text" name="tipReceiver" placeholder="User Name" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+	    <input class="form-control" type="number" step=".01" name="tip" placeholder="Amount" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        <button type="submit" class="btn btn-primary btn-block">Tip</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4 centered">
+        {% if failed %}
+          <b class="text-danger">Error: Insuficient Balance!</b>
+        {% endif %}
+      </div>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

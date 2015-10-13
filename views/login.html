@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block basecontent %}
+
+<div class="container" align=center>
+
+  <form role="form" action="/login" method="POST">
+    <div class="row">
+      <div class="form-group col-*-4 col-*-offset-4">
+        <img src="/static/upvote_logo.jpg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4">
+	    <input class="form-control" type="text" name="username" placeholder="User Name"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4">
+	    <input class="form-control" type="password" name="password" placeholder="Password"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4">
+        <button type="submit" class="btn btn-default btn-block">Login</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4">
+        <a href="/forgot" class="btn btn-primary btn-block">Forgot password</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4 col-sm-offset-4">
+        <a href="/signup" class="btn btn-default btn-block">Sign Up</a>
+      </div>
+    </div>
+  </form>
+
+  {% if failed %}
+    <strong>Login failed!</strong> Check your credentials and try again.
+  {% endif %}
+
+</div>
+
+{% endblock %}

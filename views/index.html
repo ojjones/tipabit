@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block basecontent %}
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href=/home>UpVote</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/about">About</a></li>
+            <li><a href="/trending">Trending</a></li>
+            {% if user %}
+            <li><a href="/tip">Tip</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if not user %}
+            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            {% else %}
+            <li>
+              <a href="/profile"><span class="glyphicon glyphicon-user"></span>{{ user.name }} Profile</a>
+            </li>
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block maincontent %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            Copyright &copy; UpVote 2015
+          </div>
+        </div>
+      </div>
+    </footer>
+
+{% endblock %}
